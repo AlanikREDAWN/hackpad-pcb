@@ -11,4 +11,6 @@
   (lib (name "Gateron_KS33_Hotswap")(type "KiCad")(uri "${KIPRJMOD}/MX_V2/Gateron_KS33_Hotswap.pretty")(options "")(descr ""))
   (lib (name "Alps_Solderable")(type "KiCad")(uri "${KIPRJMOD}/MX_V2/Alps_Solderable.pretty")(options "")(descr ""))
   (lib (name "Alps_MX_Stabilizers")(type "KiCad")(uri "${KIPRJMOD}/MX_V2/Alps_MX_Stabilizers.pretty")(options "")(descr ""))
+  (lib (name "XIAO_PCB")(type "KiCad")(uri "${KIPRJMOD}/Seeeduino-xiao-rp2040-KiCAD-Library/XIAO_PCB.pretty")(options "")(descr "")(disabled))
+  (lib (name "Seeed Studio XIAO Series Library")(type "KiCad")(uri "${KIPRJMOD}/Seeed Studio XIAO Series Library")(options "")(descr ""))
 )
