@@ -6,4 +6,6 @@
   (lib (name "MX_Alps_Hybrid")(type "Legacy")(uri "${KIPRJMOD}/MX_Alps_Hybrid/Schematic Library/MX_Alps_Hybrid.lib")(options "")(descr ""))
   (lib (name "SEEED-XIAO")(type "KiCad")(uri "${KIPRJMOD}/Seeed-XIAO-Libraries/SEEED-XIAO.kicad_sym")(options "")(descr "")(disabled)(hidden))
   (lib (name "MOUDLE-SEEEDUINO-XIAO")(type "KiCad")(uri "${KIPRJMOD}/Seeeduino-xiao-rp2040-KiCAD-Library 2/MOUDLE-SEEEDUINO-XIAO.kicad_sym")(options "")(descr ""))
+  (lib (name "SSD1306-128x64_OLED")(type "Legacy")(uri "${KIPRJMOD}/KiCad-SSD1306-128x64-master/library/SSD1306-128x64_OLED.lib")(options "")(descr ""))
+  (lib (name "SSD1306_OLED-0.91-128x32")(type "Legacy")(uri "${KIPRJMOD}/KiCad-SSD1306_OLED-0.91-128x32-master/SSD1306_OLED-0.91-128x32.lib")(options "")(descr ""))
 )
