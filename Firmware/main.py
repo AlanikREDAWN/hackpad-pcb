@@ -1,6 +1,3 @@
-import board
-import busio
-
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
@@ -9,6 +6,13 @@ from kmk.extensions.display.ssd1306 import SSD1306
 from kmk.modules.layers import Layers
 from kmk.modules.macros import Macros
 from kmk.modules.macros import Press, Release, Tap, Delay
+from kmk.extensions.led import LED
+from kmk.extensions.led import AnimationModes
+
+import board
+import busio
+
+print("Starting")
 
 macros = Macros()
 
@@ -51,7 +55,20 @@ ROW1 = board.D2
 ROW2 = board.D1
 ROW3 = board.D0
 
-print("Starting")
+led = LED(
+    led_pin=led_pin,
+    brightness=50,
+    brightness_step=5,
+    brightness_limit=100,
+    breathe_center=1.5,
+    animation_mode=AnimationModes.BREATHING,
+    animation_speed=1,
+    user_animation=None,
+    val=100,
+    )
+keyboard.extensions.append(led)
+
+
 keyboard = KMKKeyboard()
 layers = Layers()
 
@@ -73,27 +90,51 @@ CONTROL_S_MACRO = KC.MACRO(
     Release(KC.S),
 )
 
-ALT_S = KC.RALT(KC.S)
+ALT_S = KC.RALT(KC.S) # Use for Slack - 1
 
-ALT_T = KC.RALT(KC.T)
+ALT_T = KC.RALT(KC.T) # Use for Terminal - 2
 
-ALT_F = KC.RALT(KC.F)
+ALT_F = KC.RALT(KC.F) # Use for Figma - 3
 
-ALT_V = KC.RCALT(KC.V)
+ALT_V = KC.RCALT(KC.V) # Use for Visual Studio Code - 4
 
-ALT_M = KC.RCALT(KC.M)
+# ALT_M = KC.RCALT(KC.M) # Use for Messages
 
+ALT_C = KC.RCALT(KC.C) # Use for Canva - 5
 
+ALT_X = KC.RCALT(KC.X) # Use for Xcode - 6
+
+ALT_B = KC.RCALT(KC.B) # Use for Blender - 7
+
+ALT_O = KC.RCALT(KC.O) # Use for OBS Studio - 8
+
+# ALT_P = KC.RCALT(KC.P) # Use for Spotify
+
+ALT_G = KC.RCALT(KC.G) # Use for Godot - 9
+
+# ALT_L = KC.RCALT(KC.L) # Use for Flipper
+
+# ALT_W = KC.RCALT(KC.W) # Use for Whiskey
+
+# ALT_E = KC.RCALT(KC.E) # Use for Steam
+
+# ALT_K = KC.RCALT(KC.K) # Use for KiCad
 
 keyboard.keymap = [
     # Base Layer
     [
-
+        KC.F13, KC.F16,         KC.F17, KC.F18,
+        KC.F19,                         KC.F20,
+                KC.F21, KC.F22, KC.F23,
+                        TOGGLE,
     ],
 
     # Function Layer
     [
-
+        ALT_S, ALT_T,        ALT_F, ALT_V,
+        ALT_C,                      ALT_X,
+               ALT_B, ALT_O, ALT_G,
+                      TOGGLE,
     ],
 ]
 
