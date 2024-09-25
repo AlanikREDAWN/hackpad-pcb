@@ -55,6 +55,22 @@ ROW1 = board.D2
 ROW2 = board.D1
 ROW3 = board.D0
 
+
+
+
+
+keyboard = KMKKeyboard()
+layers = Layers()
+
+col_pins = (COL0, COL1, COL2, COL3, COL4)
+row_pins = (ROW0, ROW1, ROW2, ROW3)
+keyboard.col_pins = col_pins
+keyboard.row_pins = row_pins
+diode_orientation = DiodeOrientation.COL2ROW
+
+keyboard.modules.append(layers)
+keyboard.modules.append(macros)
+
 led = LED(
     led_pin=led_pin,
     brightness=50,
@@ -66,18 +82,8 @@ led = LED(
     user_animation=None,
     val=100,
     )
+
 keyboard.extensions.append(led)
-
-
-keyboard = KMKKeyboard()
-layers = Layers()
-
-col_pins = (COL0, COL1, COL2, COL3, COL4)
-row_pins = (ROW0, ROW1, ROW2, ROW3)
-diode_orientation = DiodeOrientation.COL2ROW
-
-keyboard.modules.append(layers)
-keyboard.modules.append(macros)
 
 # Layers
 TOGGLE = KC.TG(1)
@@ -169,25 +175,3 @@ keyboard.extensions.append(display)
 
 if __name__ == '__main__':
     keyboard.go()
-
-
-# print("Starting")
-
-# import board
-
-# from kmk.kmk_keyboard import KMKKeyboard
-# from kmk.keys import KC
-# from kmk.scanners import DiodeOrientation
-
-# keyboard = KMKKeyboard()
-
-# keyboard.col_pins = (board.GP0,)
-# keyboard.row_pins = (board.GP1,)
-# keyboard.diode_orientation = DiodeOrientation.COL2ROW
-
-# keyboard.keymap = [
-#     [KC.A,]
-# ]
-
-# if __name__ == '__main__':
-#     keyboard.go()
