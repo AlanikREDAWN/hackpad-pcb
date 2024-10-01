@@ -18,4 +18,5 @@
   (lib (name "XIAO_PCB")(type "KiCad")(uri "${KIPRJMOD}/Seeeduino-xiao-rp2040-KiCAD-Library 2/XIAO_PCB.pretty")(options "")(descr ""))
   (lib (name "SSD1306")(type "KiCad")(uri "${KIPRJMOD}/KiCad-SSD1306-128x64-master/library/SSD1306.pretty")(options "")(descr ""))
   (lib (name "kbd")(type "KiCad")(uri "${KIPRJMOD}/kbd-main/kicad-footprints/kbd.pretty")(options "")(descr ""))
+  (lib (name "kitty")(type "KiCad")(uri "${KIPRJMOD}/kitty.pretty")(options "")(descr ""))
 )
